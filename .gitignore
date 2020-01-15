@@ -1,5 +1,4 @@
 # composer
-/composer.json
 /vendor/**
 # params & data
 .env

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Virtual EVENT | BUY TICKET!</title>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+		<!-- UIkit CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.7/dist/css/uikit.min.css" />
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+		<!-- UIkit JS -->
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.7/dist/js/uikit.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.7/dist/js/uikit-icons.min.js"></script>
+		<script src="/js/app.js"></script>
+		<link rel="stylesheet" type="text/css" href="/css/buy.css" />
+		<link rel="icon" type="image/png" href="/img/favicon.png" />
+	</head>
+	<body>
+		<div class="uk-container" style="text-align: center;">
+			<br/><hr class="uk-divider-icon"/>
+			<p>Use Crypton Voucher at 0.01 CRP to buy an event ticket</p>
+			<form action="/func/buy" method="POST" id="formBuyTicket">
+				<fieldset class="uk-fieldset">
+					<div class="uk-margin">
+						<input class="uk-input" style="max-width: 300px;" type="text" placeholder="Vocher code" name="code" value=""/>
+					</div>
+					<button type="submit" class="uk-button uk-button-default">Buy ticket</button>
+				</fieldset>
+			</form>
+		</div>
+	</body>
+</html>
