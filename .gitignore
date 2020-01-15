@@ -1,0 +1,8 @@
+# composer
+/composer.json
+/vendor/**
+# params & data
+.env
+.htaccess
+# backups
+*.bak
