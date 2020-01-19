@@ -1,0 +1,76 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- `tickets`
+--
+
+CREATE TABLE `tickets` (
+  `id` int(11) NOT NULL,
+  `code` varchar(26) NOT NULL DEFAULT '',
+  `voucher_id` int(11) NOT NULL DEFAULT '0',
+  `buy_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `is_free` set('0','1') NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- `tickets`
+--
+
+INSERT INTO `tickets` (`id`, `code`, `voucher_id`, `buy_date`, `is_free`) VALUES
+(1, 'TICKET-IJZR-POPT-DWMW-QWGN', 1, '2020-01-17 14:57:54', '0'),
+(2, 'TICKET-GATM-GNTW-OKRV-LRRQ', 3, '2020-01-19 12:15:23', '0'),
+(3, 'TICKET-FDDD-GTRF-AMSF-KJBD', 0, '2020-01-17 14:44:08', '1'),
+(4, 'TICKET-YDRF-UHVL-LPLL-FAOI', 0, '2020-01-17 14:44:08', '1'),
+(5, 'TICKET-ZEHP-GCZS-HMMB-DFCQ', 0, '2020-01-17 14:44:08', '1'),
+(6, 'TICKET-UYRR-CJYE-XCYL-AHDR', 0, '2020-01-17 14:44:08', '1'),
+(7, 'TICKET-CLPQ-XEWH-YGOF-DAHT', 0, '2020-01-17 14:44:08', '1'),
+(8, 'TICKET-NQHA-URMV-CJHT-INMY', 0, '2020-01-17 14:44:08', '1'),
+(9, 'TICKET-YCAD-MCIY-SBNX-XIXZ', 0, '2020-01-17 14:44:08', '1'),
+(10, 'TICKET-NZMU-MSNJ-MYGF-IBGJ', 0, '2020-01-17 14:44:08', '1');
+
+-- --------------------------------------------------------
+
+--
+-- `vouchers`
+--
+
+CREATE TABLE `vouchers` (
+  `id` int(11) NOT NULL,
+  `code` varchar(28) NOT NULL DEFAULT '',
+  `referenceNumber` varchar(64) NOT NULL DEFAULT '',
+  `amount` decimal(10,9) NOT NULL DEFAULT '0.000000000',
+  `used` set('0','1') NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- `tickets`
+--
+ALTER TABLE `tickets`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `is_free` (`is_free`);
+
+--
+-- `vouchers`
+--
+ALTER TABLE `vouchers`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `code` (`code`);
+
+ALTER TABLE `tickets`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+ALTER TABLE `vouchers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

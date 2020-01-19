@@ -16,4 +16,5 @@ cd public_html
 cp example.htaccess .htaccess
 ```
 
-make changes to `.env`
+* make changes to `.env`;
+* import db tables dump from `resources/tables.sql`;
