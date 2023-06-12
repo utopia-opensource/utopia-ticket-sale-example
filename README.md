@@ -18,3 +18,6 @@ cp example.htaccess .htaccess
 
 * make changes to `.env`;
 * import db tables dump from `resources/tables.sql`;
+
+---
+[![udocs](https://github.com/Sagleft/ures/blob/master/udocs-btn.png?raw=true)](https://udocs.gitbook.io/utopia-api/)
